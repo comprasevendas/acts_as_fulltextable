@@ -6,11 +6,11 @@ require 'acts_as_fulltextable/version'
 Gem::Specification.new do |gem|
   gem.name          = "acts_as_fulltextable"
   gem.version       = ActsAsFulltextable::VERSION
-  gem.authors       = ["Anthony Figueroa"]
-  gem.email         = ["afigueroa@toptierlabs.com"]
+  gem.authors       = ["Henrique Sobral"]
+  gem.email         = ["henrique@tacombinado.com"]
   gem.description   = %q{Creates an auxiliary table in order to be used with full-text searches}
   gem.summary       = %q{It allows you to create an auxiliary to be used for full-text searches. It behaves like a polymorphic association, so it can be used with any ActiveRecord model.}
-  gem.homepage      = "https://github.com/toptierlabs/acts_as_fulltextable"
+  gem.homepage      = "https://github.com/comprasevendas/acts_as_fulltextable"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
