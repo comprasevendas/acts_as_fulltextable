@@ -86,7 +86,7 @@ module ActsAsFulltextable
             return
           end
         end
-        FulltextRow.update_all(["value = ?, parent_id = ?", self.fulltext_value, self.parent_id_value], ["fulltextable_type = ? AND fulltextable_id = ?", self.class.to_s, self.id]) if !(self.class.fulltext_options[:check_for_changes]) || (row.value != self.fulltext_value) || (self.parent_id_value != row.parent_id)
+        FulltextRow.where(["fulltextable_type = ? AND fulltextable_id = ?", self.class.to_s, self.id]).update_all(["value = ?, parent_id = ?", self.fulltext_value, self.parent_id_value]) if !(self.class.fulltext_options[:check_for_changes]) || (row.value != self.fulltext_value) || (self.parent_id_value != row.parent_id)
       else
 
         row = FulltextRow.find_by(fulltextable_type: self.class.to_s, fulltextable_id: self.id)
